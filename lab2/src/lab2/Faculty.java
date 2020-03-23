@@ -13,15 +13,15 @@ import java.util.List;
  * @author Treetacle
  */
 public class Faculty implements EmailRecipient {
-    private List<String> teachers = new ArrayList<>();
+    private List<Teacher> teachers = new ArrayList<>();
     private String emailAddress;
     
     public Faculty(String emailAddress) {
         this.emailAddress = emailAddress;
     }
     
-    public void addGrade(String teacher) {
-    teachers.add(teacher);
+    public void addTeacher(Teacher tt) {
+    teachers.add(tt);
     }
     
     @Override

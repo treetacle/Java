@@ -16,7 +16,7 @@ public class University implements EmailRecipient {
     
     private String emailAddress;
     private String name;
-    private List<String> faculties = new ArrayList<>();
+    private List<Faculty> faculties = new ArrayList<>();
     
     public University(String name, String emailAddress) {
         this.name = name;
@@ -31,12 +31,12 @@ public class University implements EmailRecipient {
         this.name = name;
     }
 
-    public List<String> getfaculties() {
-        return faculties;
+    public void getFaculties() {
+         System.out.println(faculties);
     }
 
-    public void addFaculty(String faculty) {
-        faculties.add(faculty);
+    public void addFaculty(Faculty ff) {
+        faculties.add(ff);
     }
     
     @Override
