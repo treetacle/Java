@@ -41,7 +41,7 @@ public class Lab3 {
         //Odpowiedzi na pytania z zadania 1:
         //1. HashSet zapewnia tylko unikalność elementów, natomiast TreeSet dodatkowo sortuje dane.
         //2. HashSet jeżeli zależy nam na szybkości operacji, notmiast TreeSet kiedy potrzebujemy danych posortowanych
-        //3. nie, ale jeżeli chciałbym zastosować inny rodzaj sortowania to musiałbym zaimplementować interfejs "Comparator"
+        //3. Dodaanie biblioteki java.util.HashSet, ale jeżeli chciałbym zastosować inny rodzaj sortowania to musiałbym zaimplementować interfejs "Comparator"
         
         //zad2
         Map<String, Person> sT = new HashMap<>();
