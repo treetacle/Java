@@ -15,36 +15,43 @@
                     <label class="col-sm-2 control-label">Tytuł:</label>
                     <div class="col-sm-10" th:classappend="${#fields.hasErrors('*{title}')?'has-error':''}">
                         <input type="text" th:field="*{title}" class="form-control"/>
+                        <p th:if="${#fields.hasErrors('*{title}')}">Od 5 do 255 znaków</p>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Rocznik:</label>
                     <div class="col-sm-4" th:classappend="${#fields.hasErrors('*{year}')?'has-error':''}">
                         <input type="number" th:field="*{year}" class="form-control"/>
+                        <p th:if="${#fields.hasErrors('*{year}')}">Od 1900roku</p>
                     </div>
                     <label class="col-sm-2 control-label">Przebieg:</label>
                     <div class="col-sm-4" th:classappend="${#fields.hasErrors('*{mileage}')?'has-error':''}">
                         <input type="number" th:field="*{mileage}" class="form-control"/>
+                        <p th:if="${#fields.hasErrors('*{mileage}')}">Od 0</p>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Pojemność silnika:</label>
                     <div class="col-sm-4" th:classappend="${#fields.hasErrors('*{engineSize}')?'has-error':''}">
                         <input type="number" th:field="*{engineSize}" step="0.1" class="form-control"/>
+                        <p th:if="${#fields.hasErrors('*{engineSize}')}">Od 0 do 99</p>
                     </div>
                     <label class="col-sm-2 control-label">Moc silnika:</label>
                     <div class="col-sm-4" th:classappend="${#fields.hasErrors('*{enginePower}')?'has-error':''}">
                         <input type="number" th:field="*{enginePower}" class="form-control"/>
+                        <p th:if="${#fields.hasErrors('*{enginePower}')}">Od 0</p>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Liczba drzwi:</label>
                     <div class="col-sm-4" th:classappend="${#fields.hasErrors('*{doors}')?'has-error':''}">
                         <input type="number" th:field="*{doors}" class="form-control"/>
+                        <p th:if="${#fields.hasErrors('*{doors}')}">Od 1 do 5</p>
                     </div>
                     <label class="col-sm-2 control-label">Kolor:</label>
                     <div class="col-sm-4" th:classappend="${#fields.hasErrors('*{colour}')?'has-error':''}">
                         <input type="text" th:field="*{colour}" class="form-control"/>
+                        <p th:if="${#fields.hasErrors('*{colour}')}">Od 3 do 30 znaków</p>
                     </div>
                 </div>
                 <div class="form-group">
@@ -53,6 +60,7 @@
                         <select class="form-control" th:field="*{model.id}">
                         <option th:each="cm : ${carModels}" th:value="${cm.id}" th:text="|${cm.manufacturer.name} ${cm.name}|"></option>
                         </select>
+                        <p th:if="${#fields.hasErrors('*{model.id}')}">Nie może być puste</p>
                     </div>
                 </div>
                 <div class="form-group">
@@ -61,24 +69,28 @@
                         <select class="form-control" th:field="*{bodyStyle.id}">
                         <option th:each="bs : ${bodyStyles}" th:value="${bs.id}" th:text="${bs.name}"></option>
                         </select>
+                        <p th:if="${#fields.hasErrors('*{bodyStyle.id}')}">Nie może być puste</p>
                     </div>
                     <label class="col-sm-2 control-label">Rodzaj paliwa:</label>
                     <div class="col-sm-4" th:classappend="${#fields.hasErrors('*{fuelType.id}')?'has-error':''}">
                         <select class="form-control" th:field="*{fuelType.id}">
                         <option th:each="ft : ${fuelTypes}" th:value="${ft.id}" th:text="${ft.name}"></option>
                         </select>
+                        <p th:if="${#fields.hasErrors('*{fuelType.id}')}">Nie może być puste</p>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Cena:</label>
                     <div class="col-sm-4" th:classappend="${#fields.hasErrors('*{price}')?'has-error':''}">
                         <input type="number" th:field="*{price}" class="form-control"/>
+                        <p th:if="${#fields.hasErrors('*{price}')}">od 0</p>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Opis:</label>
                     <div class="col-sm-10" th:classappend="${#fields.hasErrors('*{description}')?'has-error':''}">
                         <textarea class="form-control" th:field="*{description}" rows="5"/>
+                        <p th:if="${#fields.hasErrors('*{price}')}">od 5 do 65535 znaków</p>
                     </div>
                 </div>
                 <div class="form-group">
